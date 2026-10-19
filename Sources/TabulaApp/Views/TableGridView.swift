@@ -51,6 +51,8 @@ struct TableGridView: View {
                     }
                 }
             }
+            // A 2D ScrollView centers content shorter than the viewport, leaving a band above the rows.
+            .defaultScrollAnchor(.topLeading)
             .background(Color(nsColor: .textBackgroundColor))
             .scrollEdgeEffectStyle(.hard, for: .top)
             .contentMargins(.bottom, 64, for: .scrollContent)

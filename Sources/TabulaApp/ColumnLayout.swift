@@ -18,7 +18,8 @@ struct ColumnLayout: Equatable {
 
         let widths = table.columns.indices.map { index -> CGFloat in
             let column = table.columns[index]
-            let headerWidth = 18 + 6 + measure(column.title.plainText, header) + 4 + 10
+            // Badge + spacing + title + spacing + sort chevron, matching `HeaderRowView`'s HStack(spacing: 6).
+            let headerWidth = 18 + 6 + measure(column.title.plainText, header) + 6 + 10
             var widest: CGFloat = 0
             for row in rows {
                 let cell = row.cells[index]
